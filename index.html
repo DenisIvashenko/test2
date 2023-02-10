@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <title>Часть 2</title>
+</head>
+
+<body>
+    <img class="border" src="img/Frame 71746.svg" alt="Рамка">
+    <div class="page">
+        <img class="logo" src="img/flower 1 1.svg" alt="Логотип компании" width="192" height="192">
+        <h1 class="title">Авторизация</h1>
+        <form class="auth-form" action="https://test-works.pr-uni.ru/api/login" method="get">
+            <div class="login-form">
+                <label class="visually-hidden" for="auth-login">Логин</label>
+                <input class="auth-form-field" type="text" id="auth-login" name="auth-login"
+                    placeholder="Email или телефон">
+                <img class="img-svg" src="img/Vector.svg" alt="">
+            </div>
+            <div class="login-form">
+                <label class="visually-hidden" for="auth-password">Пароль</label>
+                <input class="auth-form-field" type="password" id="auth-password" name="auth-password"
+                    placeholder="Пароль">
+                <img class="img-svg" src="img/key.svg" alt="">
+            </div>
+            <button class="button" onclick="login()" type="submit">Войти</button>
+        </form>
+    </div>
+    <script>
+        function login() {
+            console.log('123');
+        }
+        fetch('https://test-works.pr-uni.ru/api/login', {
+            mode: "no-cors"
+        })
+            .then(response => {
+                //handle response            
+                console.log(response);
+            })
+            .then(data => {
+                //handle data
+                console.log(data);
+            })
+            .catch(error => {
+                //handle error
+            });
+    </script>
+</body>
+
+</html>
